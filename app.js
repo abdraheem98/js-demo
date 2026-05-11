@@ -124,6 +124,46 @@ const styles = {
   btn:      { padding:'8px 20px', background:'#1a1a2e', color:'#fff', border:'none', borderRadius:8, cursor:'pointer', fontSize:14 },
 };
 
+
+useEffect(() => {
+  if (joined) {
+    fetch(`http://localhost:3000/messages/${room}`)
+      .then(res => res.json())
+      .then(data => setMessages(data));
+  }
+}, [joined, room]);
+
+const sendMessage = () => {
+  if (!text.trim()) return;
+  socket.emit('send_message', { username, text, room });
+  setText('');
+}
+
+const joinRoom = () => {
+  if (!username.trim()) return;
+  socket.emit('join_room', { username, room });
+  setJoined(true);
+}   
+
+const leaveRoom = () => {
+  socket.emit('leave_room', { username, room });
+  setJoined(false);
+  setMessages([]);
+}   
+
+const handleRoomChange = (e) => {
+  if (joined) {
+    leaveRoom();
+  } 
+    setRoom(e.target.value);
+}
+
+const handleUsernameChange = (e) => {
+  if (joined) {
+    leaveRoom();
+  }
+    setUsername(e.target.value);
+}
 const root = document.getElementById('root');
 import { createRoot } from 'react-dom/client';
 createRoot(root).render(<App />);
