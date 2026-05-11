@@ -123,3 +123,9 @@ const styles = {
   input:    { padding:'8px 12px', borderRadius:8, border:'1px solid #ddd', fontSize:14, outline:'none' },
   btn:      { padding:'8px 20px', background:'#1a1a2e', color:'#fff', border:'none', borderRadius:8, cursor:'pointer', fontSize:14 },
 };
+
+sourceMappingURL=app.js.map
+
+const root = document.getElementById('root');
+import { createRoot } from 'react-dom/client';
+createRoot(root).render(<App />);
