@@ -164,3 +164,26 @@ const handleUsernameChange = (e) => {
   }
     setUsername(e.target.value);
 }
+const root = document.getElementById('root');
+import { createRoot } from 'react-dom/client';
+createRoot(root).render(<App />);
+
+console.log('App loaded');
+
+console.log('App loaded');
+
+console.log('App loaded');
+
+function test() {
+  console.log('Test function');
+}
+
+console.log('Test function defined');
+
+test();
+
+function test() {
+  console.log('Test function called');
+}
+
+test();
