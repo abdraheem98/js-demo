@@ -124,8 +124,26 @@ const styles = {
   btn:      { padding:'8px 20px', background:'#1a1a2e', color:'#fff', border:'none', borderRadius:8, cursor:'pointer', fontSize:14 },
 };
 
-sourceMappingURL=app.js.map
-
 const root = document.getElementById('root');
 import { createRoot } from 'react-dom/client';
 createRoot(root).render(<App />);
+
+console.log('App loaded');
+
+console.log('App loaded');
+
+console.log('App loaded');
+
+function test() {
+  console.log('Test function');
+}
+
+console.log('Test function defined');
+
+test();
+
+function test() {
+  console.log('Test function called');
+}
+
+test();
